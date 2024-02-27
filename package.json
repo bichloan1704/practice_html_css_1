@@ -1,0 +1,33 @@
+{
+  "name": "test2",
+  "version": "1.0.0",
+  "description": "test2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./src/pages/index.html",
+    "format": "prettier --write .",
+    "sass": "sass --watch styles.scss styles.css",
+    "lint": "eslint ."
+  },
+  "author": " ",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "husky": "^8.0.3",
+    "parcel-bundler": "^1.12.5",
+    "posthtml-doctype": "^1.1.1",
+    "posthtml-include": "^1.7.4",
+    "prettier": "^3.2.4",
+    "sass": "^1.70.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --fix",
+    "*.{json,md,css,scss,yaml,yml}": "prettier --write"
+  }
+}
